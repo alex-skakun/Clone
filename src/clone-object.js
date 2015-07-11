@@ -8,9 +8,8 @@
         if (Array.isArray(properties)) {
             for (var i = 0, l = properties.length; i < l; i++) {
                 var property = properties[i],
-                    descriptor = Object.getOwnPropertyDescriptor(original, property),
-                    descriptorProperties = Object.keys(descriptor);
-                if (~descriptorProperties.indexOf('value')) {
+                    descriptor = Object.getOwnPropertyDescriptor(original, property);
+                if (descriptor.hasOwnProperty('value')) {
                     descriptor.value = clone(descriptor.value);
                 }
                 Object.defineProperty(copy, property, descriptor);
