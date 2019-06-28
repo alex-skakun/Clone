@@ -16,10 +16,10 @@ let clone = angular.copy(original);
 The function `cloneObject()` creates object with saving of prototype of original object.
 For example you have:
 ```javascript
-class User (name) {
+class User {
 
     constructor (name) {
-        this.name = nme;
+        this.name = name;
     }
     
     hello () {
