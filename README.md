@@ -1,36 +1,41 @@
 # cloneObject()
 Function for cloning objects.
 
-#How it works
-
-    var clone = cloneObject(original);
-
+# How it works
+```javascript
+let clone = cloneObject(original);
+```
 What is the difference among cloneObject() and these:
-
-    var clone = JSON.parse(JSON.stringify(original)); 
+```javascript
+let clone = JSON.parse(JSON.stringify(original));
+```
 or
-
-    var clone = angular.copy(original);
-
-The function cloneObject() creates object with saving of prototype of original object.
+```javascript
+let clone = angular.copy(original);
+```
+The function `cloneObject()` creates object with saving of prototype of original object.
 For example you have:
+```javascript
+class User (name) {
 
-    function User (name) {
-        this.name = name;
+    constructor (name) {
+        this.name = nme;
     }
     
-    User.prototype.hello = function () {
-        alert('Hello, my name is ' + this.name + '!');
-    };
+    hello () {
+        alert(`Hello, my name is ${this.name}!`);
+    }
     
-    var user = new User('Alex');
-    
-then you want to create full copy of your `user`:
+}
 
-    var userCopy = cloneObject(user);
-    
-    // you can call methods from User.prototype;
-     
-    userCopy.hello(); // Hello, my name is Alex! 
-    
+let user = new User('Alex');
+```    
+then you want to create full copy of your `user`:
+```javascript
+let userCopy = cloneObject(user);
+
+// you can call methods from User.prototype;
+
+userCopy.hello(); // Hello, my name is Alex! 
+```
     
